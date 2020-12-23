@@ -1,12 +1,12 @@
- <img src='./data/images/header.png' width='1000' text-align='center'>
+ <img src='./.github/images/header.png' width='1000' text-align='center'>
 
 # Carrier Owl  
 
-<img src='./data/images/carrier-owl.png' width='50' text-align='center'>
+<img src='./.github/images/carrier-owl.png' width='50' text-align='center'>
 伝書フクロウという意味です。
 
 ## About Carrier Owl
-<img src='./data/images/system.png' width='1000'>
+<img src='./.github/images/system.png' width='1000'>
 
 前日のarxivから気になる論文にスコアを付けてslackに通知するシステムです。  
 通知の際に、abstractをDeepLで翻訳しています。  
@@ -28,7 +28,7 @@
 
 - 通知例(score昇順)
 
-    <img src='./data/images/03.png' width='600'>
+    <img src='./.github/images/03.png' width='600'>
 
 
 ## Installation
@@ -59,15 +59,15 @@
             - [公式](https://slack.com/intl/ja-jp/help/articles/115005265063-Slack-での-Incoming-Webhook-の利用)
             - [紹介記事](https://qiita.com/vmmhypervisor/items/18c99624a84df8b31008)
     - slack通知の時のアイコンが設定できますので、よければこれ使ってください。
-        - [icon](https://github.com/fkubota/Carrier-Owl/blob/master/data/images/carrier-owl.png)
-            <img src='./data/images/carrier-owl.png' width='50'>
+        - [icon](https://github.com/fkubota/Carrier-Owl/blob/master/.github/images/carrier-owl.png)
+            <img src='./.github/images/carrier-owl.png' width='50'>
 
 
 
 6. webhook urlの設定
     - `config.yaml` 内の、`'your webhook url'` を取得したURlに変更します。
 
-        <img src='./data/images/01.png' width='400'>
+        <img src='./.github/images/01.png' width='400'>
 
 7. 領域の設定
     - 通知させたいarxivの論文の領域を指定します。
@@ -77,7 +77,7 @@
         1. [arxiv.org](https://arxiv.org)にアクセス
         2. 通知させたい領域の**resent**と書かれた部分をクリック。
 
-            <img src='./data/images/02.png' width='400'>
+            <img src='./.github/images/02.png' width='400'>
         
         3. 遷移後のページのurlを見て、`list/`と`/recent`に囲われている文字列を使います。
 
@@ -102,7 +102,7 @@
         1. abstractにキーワードが含まれているか
         2. 含まれていれば、キーワードの合計をscoreとし、昇順で通知
 
-            <img src='./data/images/03.png' width='600'>
+            <img src='./.github/images/03.png' width='600'>
 
 9. 動作確認
 

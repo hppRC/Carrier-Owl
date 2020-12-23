@@ -19,8 +19,7 @@ warnings.filterwarnings('ignore')
 
 
 def get_articles_info(subject):
-    weekday_dict = {0: 'Mon', 1: 'Tue', 2: 'Wed', 3: 'Thu',
-                  4: 'Fri', 5: 'Sat', 6: 'Sun'}
+    weekday_dict = {0: 'Mon', 1: 'Tue', 2: 'Wed', 3: 'Thu', 4: 'Fri', 5: 'Sat', 6: 'Sun'}
     url = f'https://arxiv.org/list/{subject}/pastweek?show=100000'
     response = requests.get(url)
     html = response.text
@@ -93,15 +92,10 @@ def serch_keywords(id_list, keywords_dict):
 
 
 def send2slack(results, slack):
-    urls = results[0]
-    titles = results[1]
-    abstracts = results[2]
-    words = results[3]
-    scores = results[4]
+    urls, titles, abstracts, words, scores = results
 
     # rank
     idxs_sort = np.argsort(scores)
-    idxs_sort = idxs_sort[::-1]
 
     # 通知
     star = '*'*120
@@ -178,7 +172,7 @@ def get_config():
 
 def main():
     config = get_config()
-    slack = slackweb.Slack(url=config['slack_id'])
+    slack = slackweb.Slack(url=os.getenv("INCOMING_WEBHOOK_URL"))
     id_list = get_articles_info(config['subject'])
     results = serch_keywords(id_list, config['keywords'])
     send2slack(results, slack)
