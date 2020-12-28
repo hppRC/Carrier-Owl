@@ -2,10 +2,9 @@ name: Carrier Owl
 
 on:
   schedule:
-    - cron:  '50 9 * * 1,2,3,4,5'
-  push:
-    branches:
-      - main
+    - cron:  '50 0 * * 1,2,3,4,5'
+  workflow_dispatch:
+
 
 jobs:
   ci:
